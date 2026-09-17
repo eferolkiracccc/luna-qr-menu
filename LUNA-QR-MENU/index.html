@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Luna Coffee | Digital Menu</title>
+
+    <meta name="description"
+          content="Luna Coffee digital menu">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="header">
+
+        <div class="brand">
+
+            <h1>LUNA</h1>
+
+            <span>
+                COFFEE & FOOD
+            </span>
+
+        </div>
+
+
+        <button
+            class="menu-button"
+            onclick="scrollToMenu()">
+
+            MENÜ
+
+        </button>
+
+    </header>
+
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="hero">
+
+        <p class="welcome">
+            WELCOME TO
+        </p>
+
+
+        <h2>
+            LUNA<br>
+            COFFEE
+        </h2>
+
+
+        <p class="hero-text">
+
+            Good coffee.<br>
+            Good food.<br>
+            Good moments.
+
+        </p>
+
+
+        <button
+            class="start-button"
+            onclick="scrollToMenu()">
+
+            MENÜYÜ KEŞFET
+
+        </button>
+
+    </section>
+
+
+
+    <!-- =========================================
+         MENU / CATEGORIES
+    ========================================== -->
+
+    <section
+        class="categories"
+        id="menu">
+
+
+        <div class="section-title">
+
+            <span>
+                OUR MENU
+            </span>
+
+            <h2>
+                Kategoriler
+            </h2>
+
+        </div>
+
+
+
+        <!-- SEARCH -->
+
+        <div class="search-box">
+
+            <span>
+                🔎
+            </span>
+
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Menüde ara..."
+                oninput="searchProducts()">
+
+        </div>
+
+
+
+        <!-- CATEGORY BUTTONS -->
+
+        <div class="category-grid">
+
+
+            <!-- ALL -->
+
+            <button
+                class="category-card active"
+                onclick="filterProducts('all', this)">
+
+                <span class="category-icon">
+                    ✦
+                </span>
+
+                <span>
+                    Tümü
+                </span>
+
+            </button>
+
+
+
+            <!-- COFFEE -->
+
+            <button
+                class="category-card"
+                onclick="filterProducts('coffee', this)">
+
+                <span class="category-icon">
+                    ☕
+                </span>
+
+                <span>
+                    Kahveler
+                </span>
+
+            </button>
+
+
+
+            <!-- BREAKFAST -->
+
+            <button
+                class="category-card"
+                onclick="filterProducts('breakfast', this)">
+
+                <span class="category-icon">
+                    🥐
+                </span>
+
+                <span>
+                    Kahvaltı
+                </span>
+
+            </button>
+
+
+
+            <!-- FOOD -->
+
+            <button
+                class="category-card"
+                onclick="filterProducts('food', this)">
+
+                <span class="category-icon">
+                    🍝
+                </span>
+
+                <span>
+                    Yemekler
+                </span>
+
+            </button>
+
+
+
+            <!-- DESSERT -->
+
+            <button
+                class="category-card"
+                onclick="filterProducts('dessert', this)">
+
+                <span class="category-icon">
+                    🍰
+                </span>
+
+                <span>
+                    Tatlılar
+                </span>
+
+            </button>
+
+
+
+            <!-- DRINK -->
+
+            <button
+                class="category-card"
+                onclick="filterProducts('drink', this)">
+
+                <span class="category-icon">
+                    🥤
+                </span>
+
+                <span>
+                    İçecekler
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PRODUCTS
+    ========================================== -->
+
+    <section class="featured">
+
+
+        <div class="section-title">
+
+            <span>
+                OUR PRODUCTS
+            </span>
+
+            <h2>
+                Menü
+            </h2>
+
+        </div>
+
+
+
+        <div class="product-list">
+
+
+
+            <!-- =================================
+                 CAPPUCCINO
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="coffee"
+                onclick="openProduct(
+                    'Cappuccino',
+                    'Double espresso, kadifemsi süt köpüğü',
+                    '145 ₺',
+                    '☕'
+                )">
+
+
+                <div class="product-image coffee">
+
+                    ☕
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Cappuccino
+                        </h3>
+
+                        <strong>
+                            145 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Double espresso, kadifemsi süt köpüğü
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 CAFFE LATTE
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="coffee"
+                onclick="openProduct(
+                    'Caffè Latte',
+                    'Espresso, sıcak süt ve hafif süt köpüğü',
+                    '150 ₺',
+                    '☕'
+                )">
+
+
+                <div class="product-image coffee">
+
+                    ☕
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Caffè Latte
+                        </h3>
+
+                        <strong>
+                            150 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Espresso, sıcak süt ve hafif süt köpüğü
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 AMERICANO
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="coffee"
+                onclick="openProduct(
+                    'Americano',
+                    'Yoğun espresso ve sıcak su ile hazırlanan klasik kahve',
+                    '120 ₺',
+                    '☕'
+                )">
+
+
+                <div class="product-image coffee">
+
+                    ☕
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Americano
+                        </h3>
+
+                        <strong>
+                            120 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Espresso ve sıcak su ile hazırlanan klasik kahve
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 CROISSANT
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="breakfast"
+                onclick="openProduct(
+                    'Butter Croissant',
+                    'Tereyağlı, çıtır Fransız kruvasanı',
+                    '120 ₺',
+                    '🥐'
+                )">
+
+
+                <div class="product-image breakfast">
+
+                    🥐
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Butter Croissant
+                        </h3>
+
+                        <strong>
+                            120 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Tereyağlı, çıtır Fransız kruvasanı
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 CREAMY PASTA
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="food"
+                onclick="openProduct(
+                    'Creamy Pasta',
+                    'Kremalı sos, parmesan ve taze baharatlar',
+                    '260 ₺',
+                    '🍝'
+                )">
+
+
+                <div class="product-image food">
+
+                    🍝
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Creamy Pasta
+                        </h3>
+
+                        <strong>
+                            260 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Kremalı sos, parmesan ve taze baharatlar
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 LUNA BURGER
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="food"
+                onclick="openProduct(
+                    'Luna Burger',
+                    'Özel burger sosu, cheddar peyniri ve çıtır patates',
+                    '290 ₺',
+                    '🍔'
+                )">
+
+
+                <div class="product-image food">
+
+                    🍔
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Luna Burger
+                        </h3>
+
+                        <strong>
+                            290 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Özel burger sosu, cheddar ve çıtır patates
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 SAN SEBASTIAN
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="dessert"
+                onclick="openProduct(
+                    'San Sebastian',
+                    'Kremamsı cheesecake ve özel çikolata sosu',
+                    '185 ₺',
+                    '🍰'
+                )">
+
+
+                <div class="product-image dessert">
+
+                    🍰
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            San Sebastian
+                        </h3>
+
+                        <strong>
+                            185 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Kremamsı cheesecake ve özel çikolata sosu
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================
+                 ICED LATTE
+            ================================== -->
+
+            <article
+                class="product-card"
+                data-category="drink"
+                onclick="openProduct(
+                    'Iced Latte',
+                    'Soğuk espresso, süt ve buz',
+                    '165 ₺',
+                    '🥤'
+                )">
+
+
+                <div class="product-image drink">
+
+                    🥤
+
+                </div>
+
+
+                <div class="product-info">
+
+
+                    <div class="product-name">
+
+                        <h3>
+                            Iced Latte
+                        </h3>
+
+                        <strong>
+                            165 ₺
+                        </strong>
+
+                    </div>
+
+
+                    <p>
+                        Soğuk espresso, süt ve buz
+                    </p>
+
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         BUSINESS INFORMATION
+    ========================================== -->
+
+    <section class="business-info">
+
+
+        <div class="business-info-header">
+
+            <span>
+                VISIT US
+            </span>
+
+
+            <h2>
+                LUNA COFFEE
+            </h2>
+
+
+            <p>
+                Good coffee. Good food. Good moments.
+            </p>
+
+        </div>
+
+
+
+        <!-- BUSINESS DETAILS -->
+
+        <div class="business-details">
+
+
+            <!-- ADDRESS -->
+
+            <div class="business-detail">
+
+                <div class="detail-icon">
+                    📍
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Adres
+                    </strong>
+
+                    <p>
+                        Çankaya / Ankara
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HOURS -->
+
+            <div class="business-detail">
+
+                <div class="detail-icon">
+                    🕐
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Çalışma Saatleri
+                    </strong>
+
+                    <p>
+                        Her gün · 08:00 — 00:00
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="business-detail">
+
+                <div class="detail-icon">
+                    📞
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Telefon
+                    </strong>
+
+                    <p>
+                        0312 000 00 00
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- SOCIAL LINKS -->
+
+        <div class="social-links">
+
+
+            <a
+                href="#"
+                onclick="return false;">
+
+                Instagram
+
+            </a>
+
+
+            <a
+                href="#"
+                onclick="return false;">
+
+                Telefon
+
+            </a>
+
+
+        </div>
+
+
+
+        <!-- =====================================
+             QR CODE
+        ====================================== -->
+
+        <div class="qr-section">
+
+
+            <span class="qr-label">
+                DIGITAL MENU
+            </span>
+
+
+            <h3>
+                Menüyü Telefonuna Al
+            </h3>
+
+
+            <p>
+                QR kodu okut ve menüyü hızlıca keşfet.
+            </p>
+
+
+            <div
+                id="qrcode"
+                class="qrcode">
+            </div>
+
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =========================================
+         PRODUCT MODAL
+    ========================================== -->
+
+    <div
+        class="product-modal"
+        id="productModal"
+        onclick="closeProduct(event)">
+
+
+        <div
+            class="modal-content"
+            onclick="event.stopPropagation()">
+
+
+            <!-- CLOSE -->
+
+            <button
+                class="close-button"
+                onclick="closeProduct()">
+
+                ×
+
+            </button>
+
+
+
+            <!-- IMAGE -->
+
+            <div
+                class="modal-image"
+                id="modalImage">
+
+                ☕
+
+            </div>
+
+
+
+            <!-- INFO -->
+
+            <div class="modal-info">
+
+
+                <span class="modal-label">
+                    LUNA COFFEE
+                </span>
+
+
+                <h2 id="modalTitle">
+                    Cappuccino
+                </h2>
+
+
+                <p id="modalDescription">
+                    Double espresso, kadifemsi süt köpüğü
+                </p>
+
+
+                <div class="modal-bottom">
+
+                    <strong id="modalPrice">
+                        145 ₺
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer>
+
+
+        <h3>
+            LUNA COFFEE
+        </h3>
+
+
+        <p>
+            Çankaya / Ankara
+        </p>
+
+
+        <p>
+            Her gün 08:00 — 00:00
+        </p>
+
+
+        <div class="footer-line"></div>
+
+
+        <small>
+            DIGITAL MENU
+        </small>
+
+
+    </footer>
+
+
+
+    <!-- =========================================
+         QR CODE LIBRARY
+    ========================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js">
+    </script>
+
+
+
+    <!-- =========================================
+         MENU JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/menu.js"></script>
+
+
+</body>
+
+</html>
